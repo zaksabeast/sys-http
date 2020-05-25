@@ -1,0 +1,18 @@
+---
+BasedOnStyle: WebKit
+
+AlignAfterOpenBracket: Align
+AllowShortFunctionsOnASingleLine: Inline
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Attach
+BreakConstructorInitializers: AfterColon
+ColumnLimit: 130
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+NamespaceIndentation: All
+PointerAlignment: Right
+IndentWidth: 2
+IndentCaseLabels: true
+UseTab: Never
+AccessModifierOffset: -1
+AlignEscapedNewlines: Left
+SpacesBeforeTrailingComments: 2
