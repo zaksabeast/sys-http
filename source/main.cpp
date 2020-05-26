@@ -54,9 +54,15 @@ int main() {
   Server server;
   auto game = std::make_shared<GameReader>();
 
-  server.Get("/refreshMetadata", [game](const Request &req, Response &res) { SET_STATUS_FROM_RC(res, game->RefreshMetadata()); });
+  server.Get("/refreshMetadata", [game](const Request &req, Response &res) {
+    res.set_header("Access-Control-Allow-Origin", "*");
+
+    SET_STATUS_FROM_RC(res, game->RefreshMetadata());
+  });
 
   server.Get("/titleId", [game](const Request &req, Response &res) {
+    res.set_header("Access-Control-Allow-Origin", "*");
+
     u64 titleId = 0;
 
     SET_STATUS_FROM_RC(res, game->GetTitleId(&titleId));
@@ -67,6 +73,8 @@ int main() {
   });
 
   server.Get("/readHeap", [game](const Request &req, Response &res) {
+    res.set_header("Access-Control-Allow-Origin", "*");
+
     u64 offset = 0;
     u64 size = 0;
     std::string offsetStr = "0";
