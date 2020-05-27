@@ -111,9 +111,8 @@ int main() {
 
   server.Get("/", [](const Request &req, Response &res) { res.set_content("Health check!", "text/plain"); });
 
-  server.listen("0.0.0.0", 8080);
-
   while (appletMainLoop()) {
+    server.listen("0.0.0.0", 8080);
     svcSleepThread(100000000L);
   }
 
